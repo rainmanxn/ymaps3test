@@ -1,9 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import tileLoader from '@yandex/ymaps3-entity-tile-loader';
-// const tileLoader = await import('@yandex/ymaps3-entity-tile-loader/dist/esm/index');
-
-// const {YMapEntityTileLoader} = await ymaps3.import('@yandex/ymaps3-entity-tile-loader');
 
 import { type YMaps3Type } from './context/ymaps3context';
 
@@ -31,9 +27,6 @@ export const initYamaps3 = async (key?: string): Promise<YMaps3Type> =>
                         .import('@yandex/ymaps3-reactify')
                         .then((reactifyThen) => {
                             const reactify = reactifyThen.reactify.bindTo(React, ReactDOM);
-                            // const controls = await ymaps.import('@yandex/ymaps3-controls@0.0.1');
-                            // eslint-disable-next-line @typescript-eslint/no-unused-vars
-                            // const { YMap } = reactify.module(ymaps);
 
                             resolve({
                                 ymaps,
@@ -71,6 +64,6 @@ export const initYamaps3 = async (key?: string): Promise<YMaps3Type> =>
                 script.onerror = reject;
             }
         } catch (e) {
-            // console.log({ e });
+            console.log({ e });
         }
     });
